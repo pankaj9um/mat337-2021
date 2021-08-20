@@ -1,0 +1,8 @@
+code/vpython/*
+
+presentation/*
+
+!presentation/*.jpg
+!presentation/mat337.tex
+
+.DS_Store
