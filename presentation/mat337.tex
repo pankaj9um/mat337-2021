@@ -87,7 +87,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Wavelets Applications]{Wavelets and Applications} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[Wavelets Applications]{Wavelets and Their Applications} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Pankaj Patil} % Your name
 \institute[UOFT] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -265,7 +265,7 @@ The Haar Coefficients are the inner products $\langle f, \psi_{kj}\rangle$ used 
     \item Last Part: $f$ is continuous on compact set $[0,1] \implies$ it is uniformly continuous on [0,1].
     The modulus of continuity is  given  by $$w(f;\delta)  = sup\{|f(x)-f(y)| : |x - y| \le \delta\}$$. 
     Uniform coninuity implies that $$\lim_{n \to \infty} \omega(f;2^{-n})=0$$
-    Now let $x \in [j2^-n, (j+1)2^{-n})$
+    Now let $x \in [j2^{-n}, (j+1)2^{-n})$
 \end{itemize}
 
 \end{frame}
@@ -274,7 +274,7 @@ The Haar Coefficients are the inner products $\langle f, \psi_{kj}\rangle$ used 
     \frametitle{ Haar System for  $L^2\left({\mathbb{R}}\right)$ (Continued..)}
     \begin{eqnarray*}
         \begin{split}
-            |H_nf(x) - f(x)| &= |2^n\int_{j2^{-n}}^{(j+1)2^-n}f(t)dt-2^n\int_{j2^{-n}}^{(j+1)2^{-n}}f(x)dt| \\
+            |H_nf(x) - f(x)| &= |2^n\int_{j2^{-n}}^{(j+1)2^{-n}}f(t)dt-2^n\int_{j2^{-n}}^{(j+1)2^{-n}}f(x)dt| \\
             &\le 2^n \int_{j2^{-n}}^{(j+1)2^{-n}}|f(t) - f(x)|dt \\
             &\le 2^n \int_{j2^{-n}}^{(j+1)2^{-n}}\omega(f;2^{-n})dt \\
             &= \omega(f;2^{-n})
@@ -522,7 +522,7 @@ $\implies$ $\psi$  is s wavelet.
 
 \begin{theorem}[15.5.1]
     There is a continuous function $\phi$ of compact support in $L^2(\mathbb{R}) $
-    that generates a multiresolution of $L^2(\mathbb{R}) $such that the associated wavelet $\psi$ is continuous, 
+    that generates a multiresolution of $L^2(\mathbb{R})$ such that the associated wavelet $\psi$ is continuous, 
     has compact support, and satisfies $$\int \psi(x) dx = \int x\psi(x) dx = 0$$.
 \end{theorem}
 
