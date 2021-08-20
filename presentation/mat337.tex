@@ -124,7 +124,7 @@ University of Toronto \\ % Your institution for the title page
     \item Fourier coefficients, and hence the Fourier series approximation, depend on all values of the function
     \item For example, if you change a function $f$ a small amount on the interval $[0, 0.01]$, it is possible that every Fourier coefficient changes. This will then have an effect on the partial sums $S_n f (\theta )$ for all values of $\theta$
     \item For a badly behaved function, such as a nondifferentiable or discontinuous one, the coefficients decrease slowly.
-    \item show that the Fourier coefficients of a function go rapidly to 0 only when the functions has several continuous derivatives. Thus, we may need many terms to get a close approxima- tion, even at a point relatively far away from the discontinuity.
+    \item One can show that the Fourier coefficients of a function go rapidly to 0 only when the functions has several continuous derivatives. Thus, we may need many terms to get a close approximation, even at a point relatively far away from the discontinuity.
 \end{itemize}
 
 \end{frame}
@@ -136,7 +136,7 @@ University of Toronto \\ % Your institution for the title page
     \begin{itemize}
         \item The partial sums $S_n f (\theta )$ do not always converge to $f (\theta )$ when f is merely continuous.
         \item According to Gibbs’s phenomenon, $S_n f (\theta )$ will always exhibit bad behaviour near discontinuities, no matter how large n is.
-        \item While we can get better approximations by using on $f (\theta )$ instead of $S_n f (\theta )$ , this will not resolve such problems as
+        \item While we can get better approximations by using $\sigma f (\theta )$ instead of $S_n f (\theta )$ , this will not resolve such problems as
         slowly decreasing Fourier coefficients.
     \end{itemize}
     $\implies$
@@ -187,10 +187,10 @@ University of Toronto \\ % Your institution for the title page
 \frametitle{Haar System for  $L^2\left({\mathbb{R}}\right)$ }
 Start with description for $L^2([0,1])$, which will lead us to $L^2\left({\mathbb{R}}\right)$
 \linebreak\linebreak
-For $a < b$, let $\chi_{[a,b)}$ denote the characteristic function of $[a, b)]$.
+For $a < b$, let $\chi_{[a,b)}$ denote the characteristic function of $[a, b)$.
 
 \begin{center}
-        $\phi=\chi_{[0,1)}$ and $\psi = \chi_{[0, 0.5]} - \chi_{[0.5, 1]}$
+        $\phi=\chi_{[0,1)}$ and $\psi = \chi_{[0, 0.5)} - \chi_{[0.5, 1)}$
     \end{center} 
 Then define,
 \begin{center}
@@ -234,7 +234,7 @@ $$\int_0^1\psi_{kj}^2(x)dx = \int_0^1 (2^{k/2})^2\psi^2(2^kx-j)dx = \int_{-j}^{2
 
 
 Now $\psi_{kj}$ and $\psi_{kj'}$ for $j \ne j'$ have disjoint supports and thus are orthogonal. 
-$$\int_0^1\psi_{kj}(x)dx = 0 \text{for all } k, j$$
+$$\int_0^1\psi_{kj}(x)dx = 0 \text{ for all } k, j$$
 $\implies$ these functions are pairwise orthogonal.
 \qedwhite
 \end{frame}
@@ -263,20 +263,20 @@ The Haar Coefficients are the inner products $\langle f, \psi_{kj}\rangle$ used 
 
 \begin{itemize}
     \item Last Part: $f$ is continuous on compact set $[0,1] \implies$ it is uniformly continuous on [0,1].
-    The modulus of continuity is  given  by $$w(f;\delta)  = sup{|f(x-f(y| : |x - y| \le \delta}$$. 
-    Uniform coninuity applies that $$\lim_{n \to \infty} \omega(f;2^{-n})=0$$
+    The modulus of continuity is  given  by $$w(f;\delta)  = sup\{|f(x)-f(y)| : |x - y| \le \delta\}$$. 
+    Uniform coninuity implies that $$\lim_{n \to \infty} \omega(f;2^{-n})=0$$
     Now let $x \in [j2^-n, (j+1)2^{-n})$
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Haar Wavelets}
+    \frametitle{ Haar System for  $L^2\left({\mathbb{R}}\right)$ (Continued..)}
     \begin{eqnarray*}
         \begin{split}
-            |H_nf(x) - f(x)| &= |2^n\int_{j2^-n}^{(j+1)2^-n}f(t)dt-2^n\int_{j2^-n}^{(j+1)2^-n}f(x)dt| \\
-            &\le 2^n int_{j2^-n}^{(j+1)2^-n}|f(t) - f(x)|dt \\
-            &\le 2^n int_{j2^-n}^{(j+1)2^-n}\omega(f;2^{-n})dt \\
+            |H_nf(x) - f(x)| &= |2^n\int_{j2^{-n}}^{(j+1)2^-n}f(t)dt-2^n\int_{j2^{-n}}^{(j+1)2^{-n}}f(x)dt| \\
+            &\le 2^n \int_{j2^{-n}}^{(j+1)2^{-n}}|f(t) - f(x)|dt \\
+            &\le 2^n \int_{j2^{-n}}^{(j+1)2^{-n}}\omega(f;2^{-n})dt \\
             &= \omega(f;2^{-n})
         \end{split}
     \end{eqnarray*}
@@ -296,7 +296,7 @@ The Haar Coefficients are the inner products $\langle f, \psi_{kj}\rangle$ used 
     \end{eqnarray*}
 So we have convergence in $L^2(0,1)$ norm as well.
 \begin{itemize}
-    \item Let  $f \in L^2(0,1)$, and $fix \epsilon > 0$. Since $f$ is the $L^2$ lmit of a sequeence of 
+    \item Let  $f \in L^2(0,1)$, and fix $ \epsilon > 0$. Since $f$ is the $L^2$ lmit of a sequeence of 
     continuous functions, we can find a continuous function $g$ such that $\Vert f - g \Vert_2 < \epsilon$. Choose $n$ large enough so that
     $\Vert H_ng - g \Vert_2 < \epsilon$, then
     \begin{eqnarray*}
@@ -314,7 +314,7 @@ So we have convergence in $L^2(0,1)$ norm as well.
 
 \begin{frame}
     \frametitle{Haar System for  $L^2\left({\mathbb{R}}\right)$ (Continued..)}
-    Since the orthogonal expansion of $f$ in the Haar system sums to $f $in the $L^2$ norm,
+    Since the orthogonal expansion of $f$ in the Haar system sums to $f $ in the $L^2$ norm,
 we deduce that this orthonormal set spans all of $L^2(0,1)$ and thus is a basis.
 
 \qedwhite
@@ -325,7 +325,7 @@ we deduce that this orthonormal set spans all of $L^2(0,1)$ and thus is a basis.
 \frametitle{Haar Wavelets}
 
 \begin{definition}[15.2.4]
-    The Haar wavelet is the function $$\psi = \chi_{[0, 0.5]} - \chi_{[0.5, 1]}$$
+    The Haar wavelet is the function $$\psi = \chi_{[0, 0.5)} - \chi_{[0.5, 1)}$$
     The Haar wavelet basis is the family $$\{\psi_{kj}: k,j \in \mathbb{Z} \}$$
 \end{definition}
 
@@ -439,6 +439,75 @@ $W_k = span\{ \psi_{kj} : j \in \mathbb{Z} \}$ for each $k \in \mathbb{Z}$
 
 \end{frame}
 
+
+\begin{frame}
+    \frametitle{Multiresolution Analysis (Continued..)}
+    \boldmath{Proof.}
+\begin{itemize}
+    \item Mainly consists of long computations
+    \item The orthonormality of $\{\phi(x-j) : j \in  \mathbb{Z}$ yields confitions on $a_j$.
+    \item $\{\psi(x-k) : k \in  \mathbb{Z}$ is orthonormal and is orthogonal to $\phi(x-j)$'s.
+    \item Then we show that $V_1$ si spanned by $V_0$ and then $\psi(x-k)$'s.
+\end{itemize}
+Define $\delta_{0n} = 1$ if $n = 0$ and $0$ otherwise. We have
+\begin{eqnarray*}
+    \begin{split}
+        \delta_{0n} &= \langle \phi(x), \phi(x-n)\rangle = \left\langle \sum_i a_i\phi(2x-i),  \sum_j a_j\phi(2x-2n-i) \right\rangle \\
+        &= \sum_i\sum_j a_ia_j \langle \phi(2x-i), \phi(2x-2n-i)\rangle\\
+        &= \frac{1}{2} \sum_j a_{j+2n}a_j.
+    \end{split}
+\end{eqnarray*}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Multiresolution Analysis (Continued..)}
+\begin{itemize}
+    \item Orthonormality of $\{\phi(x-j) : j \in  \mathbb{Z}$ 
+\end{itemize}
+\begin{eqnarray*}
+    \begin{split}
+        \langle \psi(x), \psi(x-n)\rangle &= \left\langle \sum_i (-1)^i a_{1-i}\phi(2x-i),  \sum_j (-1)^ja_{1-j}\phi(2x-2n-j) \right\rangle \\
+        &= \sum_i\sum_j (-1)^{i+j}a_{1-i}a_{1-j} \langle \phi(2x-i), \phi(2x-2n-j)\rangle\\
+        &= \frac{1}{2} \sum_j  (-1)^{2j+2n}a_{1-j-2n}a_{1-j}\\
+        &= \frac{1}{2} \sum_i a_{i+2n}a_i = \delta_{0n}.
+    \end{split}
+\end{eqnarray*}
+$\implies$ $\{\phi(x-j) : j \in  \mathbb{Z}$ is orthonormal.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Multiresolution Analysis (Continued..)}
+\begin{itemize}
+    \item Orthogonality of $\psi$'s and $\phi$'s.
+\end{itemize}
+\begin{eqnarray*}
+    \begin{split}
+        \langle \psi(x-m), & \phi(x-n)\rangle \\
+        &= \left\langle \sum_i (-1)^i a_{1-i}\phi(2x-2m-i),  \sum_j a_j\phi(2x-2n-i) \right\rangle \\
+        &= \sum_i\sum_j (-1)^{i}a_{1-i}a_j \langle \phi(2x-2m-i), \phi(2x-2n-j)\rangle\\
+        &= \frac{1}{2} \sum_j  (-1)^{j+2m-2n}a_{1-j+2m-2n}a_j = \frac{1}{2} \sum_j  (-1)^{j}a_{p-j}a_j\\
+        &= \frac{1}{2} \sum_i  (-1)^{p-i}a_{p-i}a_i\\
+        &= 0
+    \end{split}
+\end{eqnarray*}
+$\implies$ $\{\phi(x-j) : j \in  \mathbb{Z}$ is orthogonal to $\{\psi(x-k) : j \in  \mathbb{Z}$.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Multiresolution Analysis (Continued..)}
+\begin{itemize}
+    \item A rather length computation gives us the third part of the proof, which is that $\{\psi(x-j) : j \in  \mathbb{Z}$ spans $L^2(\mathbb{R})$.
+    \item Hence it follows that $\{\psi(x-j) : j \in  \mathbb{Z}$ is an orthonormal basis for $L^2(\mathbb{R})$
+\end{itemize}
+
+$\implies$ $\psi$  is s wavelet.
+
+\qedwhite
+
+\end{frame}
+
 %------------------------------------------------
 \section{Daubechies Wavelets} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
 %------------------------------------------------
@@ -446,7 +515,8 @@ $W_k = span\{ \psi_{kj} : j \in \mathbb{Z} \}$ for each $k \in \mathbb{Z}$
 \frametitle{Daubechies Wavelets}
 
 \begin{itemize}
-    \item Haar wavelets do a good job of approximating functions that are locally constant
+    \item Use Multiresolution Analysis to design continuous wavelet.
+    \item Haar wavelets do a good job of approximating functions that are locally constant.
     \item Can approximate continuous functions if we use a wavelet that also satisfies $$\int x\psi(x) dx = 0$$ It is called first moment of $\psi$.
 \end{itemize}
 

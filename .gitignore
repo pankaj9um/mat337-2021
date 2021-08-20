@@ -4,5 +4,6 @@ presentation/*
 
 !presentation/*.jpg
 !presentation/mat337.tex
+!presentation/mat337.pdf
 
 .DS_Store
