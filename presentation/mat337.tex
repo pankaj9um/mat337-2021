@@ -66,14 +66,14 @@
 %\usecolortheme{orchid}
 %\usecolortheme{rose}
 %\usecolortheme{seagull}
-%\usecolortheme{seahorse}
+\usecolortheme{seahorse}
 %\usecolortheme{whale}
 %\usecolortheme{wolverine}
 
-%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
 %\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
-%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 }
 
 \usepackage{graphicx} % Allows including images
@@ -566,7 +566,7 @@ $f(x) = x^3$ approximation  using Haar Wavelets
 \frametitle{Image Compression using Daubechies Wavelets}
 
 \begin{itemize}
-    \item Signals and Images have lot of redundant data because of correlation within th data.
+    \item Signals and Images have lot of redundant data because of correlation within the data.
     \item If signal is continuous, then we can store only the value at certain time and then only increments to it, so that the original signal can be reconstructed.
     \item This reduces storage requirements and is an example of data compression.
     \item In case of images, the same principle follows. The wavelet expansion for images can generate many coefficients that are insignificant and can be discarded without losing must in terms of quality of the reconstructed image.
